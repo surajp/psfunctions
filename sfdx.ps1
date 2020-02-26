@@ -18,6 +18,7 @@ function orgs{sfdx force:org:list --all}
 function aliases{sfdx force:alias:list}
 [Net.ServicePointManager]::SecurityProtocol = "Tls12, Tls11"
 $PSDefaultParameterValues['Out-File:Encoding'] = 'utf8'
+Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
 <# file for storing sfdx commands for faster lookup#>
 $sfdxCommandsFilepath = "$HOME/commands.sfdx"
